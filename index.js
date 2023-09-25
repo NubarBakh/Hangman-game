@@ -1,3 +1,5 @@
+
+/*JSON for HangmanGame */ 
 let hangmanGame = {
     genesis: "Illegal Alien",
     madonna: "Material Girl",
@@ -12,6 +14,11 @@ let hangmanGame = {
     blondie: "Call Me"
 };
 
+const group = Object.keys(hangmanGame);
+
+
+/*codes for initial part of the game*/
+
 let win = 0;
 let left9 = 9;
 let compChoice = [];
@@ -20,12 +27,13 @@ let guess = [];
 
 let guesses = document.querySelector("#guess");
 let songs = document.querySelector("#songs");
-document.querySelector("#wins").innerHTML = win;
 let current = document.querySelector("#currentWord");
 document.querySelector("#left9").innerHTML = left9;
+document.querySelector("#wins").innerHTML = win;
 
-const group = Object.keys(hangmanGame);
-const song = Object.values(hangmanGame);
+
+
+/*Select random Singer or Band name*/
 
 function selectRandomGroup() {
     let randomIndex = Math.floor(Math.random() * group.length);
@@ -33,7 +41,10 @@ function selectRandomGroup() {
 }
 
 compChoice = selectRandomGroup();
+var song= hangmanGame[compChoice];
 
+
+/*Dashes instead of random word*/
 function putDashes(word, letters) {
     let dashes = '';
     for (let letter of word) {
@@ -52,6 +63,9 @@ console.log(compChoice)
 currentWord = putDashes(compChoice, guess);
 current.innerHTML = currentWord;
 
+
+
+/*DOM & BOM function*/
 window.addEventListener("keyup", function (e) {
     const letter = e.key.toLowerCase();
     if (!guess.includes(letter)) {
@@ -64,20 +78,28 @@ window.addEventListener("keyup", function (e) {
             left9--;
             document.querySelector("#left9").innerHTML = left9;
         }
+
+/* Function in order for reset the game*/
+function resetGame(){
+    compChoice= selectRandomGroup();
+    guess=[];
+    left9=9;
+    putDashes();}
+
+
+    /*Win or Loss*/
         
-        if (compChoice.toLowerCase() === currentWord.toLowerCase()) {
-            win++;
-            document.querySelector("#wins").innerHTML = win;
-            compChoice==hangmanGame.
-                songs.innerHTML=
-            alert("You win!");
-        }
+ if (compChoice.toLowerCase() === currentWord.toLowerCase()) {
+    win++;
+    document.querySelector("#wins").innerHTML = win;
+    songs.innerHTML= `${song} by ${compChoice}`
+    // alert("You win!");
+    resetGame(); }
         
         if (left9 === 0) {
             alert("Game over");
-            guess.length=0;
-      left9=9;
-            // You might want to reset the game here.
-        }
+            resetGame();
+            }
     }
 });
+

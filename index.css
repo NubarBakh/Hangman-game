@@ -2,8 +2,17 @@ body {background-color: #000000;
 color:aliceblue;
 position: relative;
     color: #fff;
-    background: #000;}
+    background: #000;
+}
 
+#container {
+    position: absolute;
+    top: 300px;
+    left: 500px;
+}
+
+
+/*Style name of the game*/
 #dreams{position: absolute;
     z-index: 20;
     margin: 0;
@@ -16,42 +25,52 @@ position: relative;
     transform: rotate(-15deg);
     -webkit-text-stroke: 1px #f008b7;  }
 
-    .chrome {
-        position: relative;
-        margin: 0;
-        font-family: "Titillium Web", sans-serif;
-        font-size: 200px;
-        font-style: italic;
-        line-height: 1;
-        background-image: linear-gradient(#378dbc 0%, #b6e8f1 46%, #fff 50%, #32120e 54%, #ffc488 58%, #582c11 90%, #ec9b4e 100%);
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        -webkit-text-stroke: 4px #f5f5f5;}
-
-        #band-div {
-            width: 300px;
-            padding: 20px;
-            margin-left: 10px;
-            text-align: center;}
 
 
+ .chrome {
+    position: relative;
+    margin: 0;
+    font-family: "Titillium Web", sans-serif;
+    font-size: 200px;
+    font-style: italic;
+    line-height: 1;
+    background-image: linear-gradient(#378dbc 0%, #b6e8f1 46%, #fff 50%, #32120e 54%, #ffc488 58%, #582c11 90%, #ec9b4e 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 4px #f5f5f5;}
 
-#game-section { text-align: center;
-                float: right;
-                right: 200px;
-                width: 300px;
-                height: 350px;
-                padding: 20px;
-                margin-bottom: 50px;
-                border: 7px dotted #f5f5f5;
-                box-shadow: inset 0 -3px 0 0 #f5f5f5, 0 3px 0 0 #f5f5f5;}
+
+    /*Songs and bands*/
+
+#band-div {
+    width: 300px;
+    padding: 20px;
+    margin-left: 10px;
+    text-align: center;}
+
+
+#songs{
+    font-family: 'Kablammo', cursive;
+    font-size: 30px;
+    font-style: italic; }
+
+
+/*Game section*/
+#game-section
+ { text-align: center;
+    float: right;
+    right: 200px;
+    width: 300px;
+    height: 350px;
+    padding: 20px;
+    margin-bottom: 50px;
+    border: 7px dotted #f5f5f5;
+    box-shadow: inset 0 -3px 0 0 #f5f5f5, 0 3px 0 0 #f5f5f5;}
 
  div {
-                    text-align: center;}
+    text-align: center;}
 
 
-                    #container {
-                        position: absolute;
-                        top: 300px;
-                        left: 500px;
-                    }
+                  
+
+
